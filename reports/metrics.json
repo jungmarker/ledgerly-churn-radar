@@ -1,0 +1,8 @@
+{
+  "training_rows": 2120,
+  "heldout_account_periods": 245,
+  "mean_average_precision": 0.116,
+  "mean_prevalence": 0.0491,
+  "mean_precision_at_20": 0.1,
+  "outreach_capacity": 20
+}
