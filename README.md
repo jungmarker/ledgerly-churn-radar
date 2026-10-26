@@ -2,13 +2,13 @@
 
 **Which twenty customers should Customer Success review first?**
 
-Observable usage features, forward churn labels, temporal evaluation and a capacity-limited outreach queue. Built for a customer / product analytics portfolio using [Ledgerly](https://github.com/jungmarker/ledgerly-data), a fictional B2B SaaS business. All records are synthetic. This is a reproducible portfolio implementation, not a claim of deployed customer impact.
+Observable usage features, forward churn labels, temporal evaluation and a capacity-limited outreach queue. Built for a customer / product analytics portfolio using [Ledgerly](vendor/ledgerly-data/PROVENANCE.md), a fictional B2B SaaS business. All records are synthetic. This is a reproducible portfolio implementation, not a claim of deployed customer impact.
 
 ![Computed analysis preview](reports/chart.svg)
 
 ## Try it
 
-Python 3.11–3.14 and Git are required. Run from this repository’s root.
+Python 3.11 and Git are recommended. Run from this repository’s root.
 
 ```bash
 python3 -m venv .venv
@@ -38,6 +38,10 @@ A deterministic account hash holds out 20% of customers. Training observations e
 
 **Measures:** Average precision versus prevalence, ROC-AUC, Brier score, precision/recall among the twenty highest-risk accounts.
 
+## Seed-42 findings
+
+Held-out cohorts total 245 account-periods. Average precision is about 0.116 versus about 0.049 prevalence; the top-20 queue has mean precision 10%. This is useful ranking evidence, with low absolute precision that still requires operator judgment.
+
 ## Business interpretation
 
 Use the outputs to ask whether the decision is supportable, what could go wrong and which additional evidence would change the recommendation. The reports intentionally retain limitations and unsuccessful cases. Performance on generated data measures implementation behavior; it does not establish performance on a real employer’s data.
@@ -53,3 +57,10 @@ Predicted churn is not a causal uplift score: contacting a customer may not prev
 ## Authorship
 
 Created for Nick Jungmarker’s portfolio with AI-assisted implementation. The commit history records the actual build; no backdated history or employer outcomes are claimed. Before presenting this as evidence of personal proficiency, reproduce it, review the design and be prepared to explain and modify the code. MIT license; the source generator is MIT licensed.
+
+## Related portfolio projects
+
+- [ledgerly-revenue-warehouse](https://github.com/jungmarker/ledgerly-revenue-warehouse)
+- [ledgerly-crm-resolution](https://github.com/jungmarker/ledgerly-crm-resolution)
+- [ledgerly-sales-forecast](https://github.com/jungmarker/ledgerly-sales-forecast)
+- [ledgerly-support-triage](https://github.com/jungmarker/ledgerly-support-triage)
